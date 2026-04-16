@@ -1,0 +1,33 @@
+<div class="patient-wrapper">
+  <div class="patient-card">
+    <h1>Patient Registration</h1>
+    <p class="subtitle">Create your CareNest patient account</p>
+
+    <input type="text" placeholder="Full Name" [(ngModel)]="name" />
+    <input type="email" placeholder="Email Address" [(ngModel)]="email" />
+    <input type="password" placeholder="Password" [(ngModel)]="password" />
+    <input type="number" placeholder="Age" [(ngModel)]="age" />
+
+    <select [(ngModel)]="gender">
+      <option value="" disabled selected>Select Gender</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+
+    <button class="register-btn" (click)="registerPatient()">
+      Register
+    </button>
+
+    <p class="text success" *ngIf="successMessage">
+      {{ successMessage }}
+    </p>
+
+    <p class="text error" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </p>
+
+    <p class="text">Already have an account?</p>
+    <p class="link" routerLink="/login">Login</p>
+  </div>
+</div>

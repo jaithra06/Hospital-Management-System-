@@ -1,0 +1,87 @@
+<div class="doctor-container">
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <h2>My Appointments</h2>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </header>
+
+  <div class="doctor-body">
+
+    <!-- SIDEBAR -->
+
+     <aside class="sidebar">
+  <button class="menu-item" routerLink="/doctor-dashboard">
+    Dashboard
+  </button>
+
+  <button class="menu-item active" routerLink="/doctor-appointments">
+    My Appointments
+  </button>
+
+  <button class="menu-item" routerLink="/doctor-profile">
+    Profile
+  </button>
+</aside>
+
+
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      <div class="table-card">
+
+        <h3>Approved Appointments</h3>
+
+        <!-- LOADING -->
+        <p class="loading-text" *ngIf="loading">
+          Loading appointments...
+        </p>
+
+        <!-- ERROR -->
+        <p class="error-text" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </p>
+
+        <!-- TABLE -->
+        <table *ngIf="!loading && appointments.length > 0">
+          <thead>
+            <tr>
+              <th>Patient</th>
+              <th>Date & Time</th>
+              <th>Problem</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let a of appointments">
+              <td>{{ a.patientName }}</td>
+              <td>{{ a.appointmentDate | date:'d/M/yyyy, h:mm a' }}</td>
+              <td>{{ a.problemDescription }}</td>
+
+              <td>
+                <span class="status status-approved">
+                  {{ a.status }}
+                </span>
+              </td>
+
+              <td>
+                <button class="btn approve" (click)="completeAppointment(a.appointmentId)">
+                  Complete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- EMPTY -->
+        <p class="empty-text" *ngIf="!loading && appointments.length === 0">
+          No approved appointments
+        </p>
+
+      </div>
+    </main>
+
+  </div>
+</div>

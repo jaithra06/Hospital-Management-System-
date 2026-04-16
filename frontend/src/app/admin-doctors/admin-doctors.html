@@ -1,0 +1,72 @@
+<div class="admin-container">
+
+  <header class="topbar">
+    <h2>Doctors</h2>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </header>
+
+  <div class="admin-body">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+  <h3>Admin Panel</h3>
+
+  <a class="menu-item" routerLink="/admin-dashboard">
+    📊 Dashboard
+  </a>
+
+  <a class="menu-item active" routerLink="/admin-doctors">
+    👨‍⚕️ Doctors
+  </a>
+
+  <a class="menu-item" routerLink="/admin-patients">
+    👥 Patients
+  </a>
+
+  <a class="menu-item" routerLink="/admin-appointments">
+    📅 Appointments
+  </a>
+</aside>
+
+
+    <!-- Content -->
+    <main class="content">
+      <div class="table-card">
+
+        <h3 class="title">All Doctors</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Specialization</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr *ngIf="doctors.length === 0">
+              <td colspan="4" class="empty">No doctors found</td>
+            </tr>
+
+            <tr *ngFor="let d of doctors">
+              <td>{{ d.name }}</td>
+              <td>{{ d.email }}</td>
+              <td>{{ d.specialization }}</td>
+              <td>
+                <button class="btn reject" (click)="deleteDoctor(d.doctorId)">
+                  Delete
+                </button>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+    </main>
+
+  </div>
+</div>

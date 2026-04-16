@@ -1,0 +1,35 @@
+<div class="dashboard-container">
+
+  <!-- TOP HEADER -->
+  <header class="topbar">
+    <h2>Doctor Dashboard</h2>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </header>
+
+  <div class="dashboard-body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <button class="menu-item active" routerLink="/doctor-dashboard">
+        Dashboard
+      </button>
+
+      <button class="menu-item" routerLink="/doctor-appointments">
+        My Appointments
+      </button>
+
+      <button class="menu-item" routerLink="/doctor-profile">
+        Profile
+      </button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      <div class="welcome-card">
+        <h1>Welcome Doctor</h1>
+        <p>Here you can view your approved appointments.</p>
+      </div>
+    </main>
+
+  </div>
+</div>

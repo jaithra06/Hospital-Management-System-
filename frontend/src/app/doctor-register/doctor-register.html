@@ -1,0 +1,47 @@
+<div class="patient-wrapper">
+  <div class="patient-card">
+    <h1>Doctor Registration</h1>
+    <p class="subtitle">
+      Create your CareNest doctor account
+    </p>
+
+    <input
+      type="text"
+      placeholder="Full Name"
+      [(ngModel)]="name"
+    />
+
+    <input
+      type="email"
+      placeholder="Email Address"
+      [(ngModel)]="email"
+    />
+
+    <input
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="password"
+    />
+
+    <input
+      type="text"
+      placeholder="Specialization"
+      [(ngModel)]="specialization"
+    />
+
+    <button class="register-btn" (click)="registerDoctor()">
+      Register
+    </button>
+
+    <p class="text success" *ngIf="successMessage">
+      {{ successMessage }}
+    </p>
+
+    <p class="text error" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </p>
+
+    <p class="text">Already have an account?</p>
+    <p class="link" routerLink="/login">Login</p>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+
+<div class="admin-container">
+
+  <header class="topbar">
+    <h2>Admin Dashboard</h2>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </header>
+
+  <div class="admin-body">
+
+   <aside class="sidebar">
+  <h3>Admin Panel</h3>
+
+  <a class="menu-item active" routerLink="/admin-dashboard">
+    📊 Dashboard
+  </a>
+
+  <a class="menu-item" routerLink="/admin-doctors">
+    👨‍⚕️ Doctors
+  </a>
+
+  <a class="menu-item" routerLink="/admin-patients">
+    👥 Patients
+  </a>
+
+  <a class="menu-item" routerLink="/admin-appointments">
+    📅 Appointments
+  </a>
+</aside>
+
+
+    <main class="content">
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Total Doctors</h3>
+          <p>{{ dashboardData.doctors }}</p>
+        </div>
+
+        <div class="card">
+          <h3>Total Patients</h3>
+          <p>{{ dashboardData.patients }}</p>
+        </div>
+
+        <div class="card">
+          <h3>Total Appointments</h3>
+          <p>{{ dashboardData.appointments }}</p>
+        </div>
+
+      </div>
+
+      <div class="pending-card">
+        <h3>Pending Appointments</h3>
+        <p>{{ dashboardData.pendingAppointments }}</p>
+      </div>
+
+    </main>
+
+  </div>
+</div>

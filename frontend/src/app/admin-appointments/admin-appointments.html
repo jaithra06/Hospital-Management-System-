@@ -1,0 +1,83 @@
+<div class="admin-container">
+
+  <header class="topbar">
+    <h2>Appointments</h2>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </header>
+
+  <div class="admin-body">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Admin Panel</h3>
+
+      <a class="menu-item" routerLink="/admin-dashboard">
+        📊 Dashboard
+      </a>
+
+      <a class="menu-item" routerLink="/admin-doctors">
+        👨‍⚕️ Doctors
+      </a>
+
+      <a class="menu-item" routerLink="/admin-patients">
+        👥 Patients
+      </a>
+
+      <a class="menu-item active" routerLink="/admin-appointments">
+        📅 Appointments
+      </a>
+    </aside>
+
+    <!-- Content -->
+    <main class="content">
+      <div class="table-card">
+
+        <h3>Pending Appointments</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Patient</th>
+              <th>Doctor</th>
+              <th>Specialization</th>
+              <th>Date & Time</th>
+              <th>Problem</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr *ngIf="appointments.length === 0">
+              <td colspan="7" class="empty">No pending appointments</td>
+            </tr>
+
+            <tr *ngFor="let a of appointments">
+              <td>{{ a.patientName }}</td>
+              <td>{{ a.doctorName }}</td>
+              <td>{{ a.specialization }}</td>
+              <td>{{ a.appointmentDate | date:'d/M/yyyy, h:mm a' }}</td>
+              <td>{{ a.problemDescription || '-' }}</td>
+              <td>
+                <span class="status status-pending">PENDING</span>
+              </td>
+              <td>
+                <button class="btn approve" (click)="approveAppointment(a.appointmentId)">
+                  Approve
+                </button>
+
+                <button class="btn reject" (click)="rejectAppointment(a.appointmentId)">
+                  Reject
+                </button>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+    </main>
+
+  </div>
+</div>

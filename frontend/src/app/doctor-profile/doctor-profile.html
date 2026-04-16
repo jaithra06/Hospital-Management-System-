@@ -1,0 +1,61 @@
+<div class="doctor-container">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <h2>Doctor Profile</h2>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </header>
+
+  <div class="doctor-body">
+
+    <!-- SIDEBAR -->
+   <aside class="sidebar">
+  <button class="menu-item" routerLink="/doctor-dashboard">
+    Dashboard
+  </button>
+
+  <button class="menu-item" routerLink="/doctor-appointments">
+    My Appointments
+  </button>
+
+  <button class="menu-item active" routerLink="/doctor-profile">
+    Profile
+  </button>
+</aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+      <div class="profile-card">
+        <h3>My Profile</h3>
+        <p class="subtitle">Your personal details</p>
+
+        <!-- LOADING -->
+        <p class="loading-text" *ngIf="loading">
+          Loading profile...
+        </p>
+
+        <!-- ERROR -->
+        <p class="error-text" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </p>
+
+        <!-- PROFILE DETAILS -->
+        <div *ngIf="!loading && !errorMessage">
+
+          <div class="profile-details">
+            <div class="detail-row" *ngFor="let key of profileKeys">
+              <span class="label">{{ key | titlecase }}</span>
+              <span class="value">{{ profileData[key] }}</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+</div>

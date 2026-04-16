@@ -1,0 +1,75 @@
+<div class="admin-container">
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <h2>Patients</h2>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </header>
+
+  <div class="admin-body">
+
+    <!-- SIDEBAR -->
+    
+
+    <aside class="sidebar">
+  <h3>Admin Panel</h3>
+
+  <a class="menu-item" routerLink="/admin-dashboard">
+    📊 Dashboard
+  </a>
+
+  <a class="menu-item" routerLink="/admin-doctors">
+    👨‍⚕️ Doctors
+  </a>
+
+  <a class="menu-item active" routerLink="/admin-patients">
+    👥 Patients
+  </a>
+
+  <a class="menu-item" routerLink="/admin-appointments">
+    📅 Appointments
+  </a>
+</aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+      <div class="table-card">
+        <h3>All Patients</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngIf="patients.length === 0">
+              <td colspan="5" class="empty">No patients found</td>
+            </tr>
+
+            <tr *ngFor="let p of patients">
+              <td>{{ p.name }}</td>
+              <td>{{ p.email }}</td>
+              <td>{{ p.age }}</td>
+              <td>{{ p.gender }}</td>
+              <td>
+                <button class="btn delete" (click)="deletePatient(p.patientId)">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+
+    </main>
+
+  </div>
+</div>

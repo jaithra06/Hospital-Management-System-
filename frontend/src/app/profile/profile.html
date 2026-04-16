@@ -1,0 +1,69 @@
+<div class="dashboard-container">
+
+  <header class="topbar">
+    <h2>Profile</h2>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </header>
+
+  <div class="dashboard-body">
+
+    <aside class="sidebar">
+      <h3>Patient Panel</h3>
+
+      <button class="menu-item" routerLink="/patient-dashboard">
+        📊 Dashboard
+      </button>
+
+      <button class="menu-item" routerLink="/book-appointment">
+        📅 Book Appointment
+      </button>
+
+      <button class="menu-item" routerLink="/my-appointments">
+        📁 My Appointments
+      </button>
+
+      <button class="menu-item active" routerLink="/profile">
+        👤 Profile
+      </button>
+    </aside>
+
+    <main class="content">
+      <div class="profile-card">
+
+        <h3 class="profile-title">My Profile</h3>
+        <p class="profile-subtitle">Your personal details</p>
+
+        <div class="profile-details">
+
+          <div class="detail-row">
+            <span class="label">Name</span>
+            <span class="value">{{ profileData.name }}</span>
+          </div>
+
+          <div class="detail-row">
+            <span class="label">Age</span>
+            <span class="value">{{ profileData.age }}</span>
+          </div>
+
+          <div class="detail-row">
+            <span class="label">Gender</span>
+            <span class="value">{{ profileData.gender }}</span>
+          </div>
+
+          <div class="detail-row">
+            <span class="label">Email</span>
+            <span class="value">{{ profileData.email }}</span>
+          </div>
+
+          <div class="detail-row">
+            <span class="label">Role</span>
+            <span class="value">{{ profileData.role }}</span>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+</div>

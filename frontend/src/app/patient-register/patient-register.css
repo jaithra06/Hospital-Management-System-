@@ -1,0 +1,122 @@
+/* Page background */
+.patient-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Glass Card */
+.patient-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px);
+  width: 380px;
+  padding: 45px 35px;
+  border-radius: 22px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 25px 55px rgba(139, 92, 246, 0.45);
+  animation: fadeUp 0.8s ease;
+}
+
+/* Title */
+.patient-card h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 15px;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+/* Inputs & Select */
+.patient-card input,
+.patient-card select {
+  width: 92%;
+  padding: 14px 16px;
+  margin: 0 auto 16px auto;
+  display: block;
+  border-radius: 14px;
+  border: none;
+  font-size: 15px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Register Button */
+.register-btn {
+  width: 92%;
+  padding: 14px;
+  margin: 18px auto 0 auto;
+  display: block;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: white;
+  color: #6D28D9;
+  transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+  background: #F5F3FF;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(109, 40, 217, 0.35);
+}
+
+/* Text */
+.text {
+  margin-top: 22px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.link {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .patient-card {
+    width: 100%;
+    padding: 35px 25px;
+  }
+
+  .patient-card h1 {
+    font-size: 26px;
+  }
+}
+.success {
+  margin-top: 15px;
+  color: #E0FFE7;
+}
+
+.error {
+  margin-top: 15px;
+  background: rgba(255, 0, 0, 0.15);
+  padding: 10px;
+  border-radius: 10px;
+  color: #FFE4E6;
+}
+

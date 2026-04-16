@@ -1,0 +1,123 @@
+/* Full page background – SAME AS LANDING */
+.login-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Glass login card – SAME CARD STYLE */
+.login-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px);
+  width: 380px;
+   padding: 40px 32px;
+  border-radius: 22px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 25px 55px rgba(139, 92, 246, 0.45);
+  animation: fadeUp 0.8s ease;
+}
+
+/* Heading */
+.login-card h1 {
+  font-size: 34px;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 16px;
+  margin-bottom: 35px;
+  opacity: 0.95;
+}
+
+/* Inputs – soft & clean */
+.login-card input {
+  width: 92%;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: none;
+  margin: 0 auto 18px auto;
+  display: block;
+  font-size: 15px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+
+/* Login Button – SAME AS LANDING BUTTONS */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: white;
+  color: #6D28D9;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #F5F3FF;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(109, 40, 217, 0.35);
+}
+
+/* Text & links */
+.text {
+  margin-top: 22px;
+  font-size: 14px;
+}
+
+.text.small {
+  margin-top: 14px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.link {
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Error message (optional) */
+.error {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 0, 0, 0.15);
+  color: #ffe4e6;
+  font-size: 14px;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-card {
+    width: 100%;
+    padding: 35px 25px;
+  }
+
+  .login-card h1 {
+    font-size: 28px;
+  }
+}

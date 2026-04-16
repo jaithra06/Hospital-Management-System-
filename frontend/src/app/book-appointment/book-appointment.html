@@ -1,0 +1,81 @@
+<div class="dashboard-container">
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <h2>Book Appointment</h2>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </header>
+
+  <div class="dashboard-body">
+    <aside class="sidebar">
+  <h3>Patient Panel</h3>
+
+  <button
+    class="menu-item"
+    routerLink="/patient-dashboard"
+  >
+    📊 Dashboard
+  </button>
+
+  <button
+    class="menu-item active" 
+  >
+    📅 Book Appointment
+  </button>
+
+  <button
+    class="menu-item"
+    routerLink="/my-appointments"
+  >
+    📁 My Appointments
+  </button>
+
+  <button
+    class="menu-item"
+    routerLink="/profile"
+  >
+    👤 Profile
+  </button>
+</aside>
+
+
+    <!-- Sidebar -->
+ 
+
+    <!-- Main content -->
+    <main class="content">
+      <div class="form-card">
+
+        <h3>Book Appointment</h3>
+
+        <label>Doctor</label>
+        <select [(ngModel)]="doctorId" (change)="loadSlots()">
+          <option value="">-- Select Doctor --</option>
+          <option *ngFor="let d of doctors" [value]="d.doctorId">
+            {{ d.doctorName }} — {{ d.specialization }}
+          </option>
+        </select>
+
+        <label>Date</label>
+        <input type="date" [(ngModel)]="date" (change)="loadSlots()" />
+
+        <label>Time Slot</label>
+        <select [(ngModel)]="timeSlot">
+          <option value="">-- Select Time Slot --</option>
+          <option *ngFor="let s of slots" [value]="s">{{ s }}</option>
+        </select>
+
+        <label>Problem Description</label>
+        <textarea [(ngModel)]="problem"></textarea>
+
+        <button class="primary-btn" (click)="bookAppointment()">
+          Book Appointment
+        </button>
+
+        <p class="success" *ngIf="message">{{ message }}</p>
+
+      </div>
+    </main>
+
+  </div>
+</div>

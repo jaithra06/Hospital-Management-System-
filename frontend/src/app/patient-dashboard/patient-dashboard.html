@@ -1,0 +1,55 @@
+<div class="dashboard-container">
+
+  <!-- Top Navbar -->
+  <header class="topbar">
+    <div class="logo">
+      🏥 <span>CareNest Hospital</span>
+    </div>
+
+    <button class="logout-btn" (click)="logout()">
+      Logout
+    </button>
+  </header>
+
+  <!-- Main Content -->
+  <div class="dashboard-body">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Patient Panel</h3>
+
+      <button
+  class="menu-item"
+  routerLink="/book-appointment"
+>
+  📅 Book Appointment
+</button>
+
+
+      <button class="menu-item" routerLink="/my-appointments">
+        📁 My Appointments
+      </button>
+
+      <button class="menu-item" routerLink="/profile">
+        👤 Profile
+      </button>
+    </aside>
+
+    <!-- Content Area -->
+    <main class="content">
+      <h2>Welcome to CareNest Hospital</h2>
+      <p>
+        From here you can book appointments, track their status,
+        and manage your profile with ease.
+      </p>
+
+      <div class="image-card">
+        <img
+          src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3"
+          alt="Hospital"
+        />
+      </div>
+    </main>
+
+  </div>
+</div>

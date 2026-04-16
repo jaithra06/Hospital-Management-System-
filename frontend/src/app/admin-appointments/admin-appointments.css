@@ -1,0 +1,280 @@
+/* ================== ADMIN APPOINTMENTS PAGE - LIGHT ORANGE THEME ================== */
+
+.admin-container {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  background: linear-gradient(to right, #fff3e0, #ffe0b2);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================== TOPBAR ================== */
+.topbar {
+  background: #ff9800;
+  color: white;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 15px rgba(255, 152, 0, 0.35);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.topbar h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.logout-btn {
+  background: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #ff6f00;
+  transition: 0.3s ease;
+  box-shadow: 0px 4px 12px rgba(255, 152, 0, 0.25);
+}
+
+.logout-btn:hover {
+  background: #ff6f00;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ================== BODY LAYOUT ================== */
+.admin-body {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  gap: 20px;
+  overflow: hidden;
+}
+
+/* ================== SIDEBAR (FIXED SAME AS DASHBOARD) ================== */
+.sidebar {
+  width: 250px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 25px 15px;
+  box-shadow: 0px 6px 18px rgba(255, 152, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.sidebar h3 {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff6f00;
+}
+
+.menu-item {
+  text-decoration: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+  display: block;
+  transition: 0.3s ease;
+  display: block;
+
+
+}
+
+.menu-item:hover {
+  background: #ffe0b2;
+  color: #ff6f00;
+  transform: translateX(6px);
+}
+
+.menu-item.active {
+  background: #ff9800;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0px 4px 12px rgba(255, 152, 0, 0.35);
+}
+
+/* ================== MAIN CONTENT ================== */
+.content {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0px 6px 18px rgba(255, 152, 0, 0.2);
+  overflow: hidden;
+}
+
+/* ================== TABLE CARD ================== */
+.table-card {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0px 6px 15px rgba(255, 152, 0, 0.25);
+  border: 2px solid #ffe0b2;
+
+  /* SCROLLER */
+  overflow: auto;
+  max-height: 450px;
+}
+
+.table-card h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ff6f00;
+  text-align: center;
+}
+
+/* ================== TABLE STYLE ================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  min-width: 950px;
+}
+
+thead {
+  background: #ff9800;
+  color: white;
+
+  /* Sticky header */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+thead th {
+  padding: 14px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+tbody td {
+  padding: 12px;
+  text-align: center;
+  font-weight: 500;
+  border-bottom: 1px solid #ffe0b2;
+  color: #444;
+}
+
+tbody tr:hover {
+  background: #fff3e0;
+  transition: 0.3s;
+}
+
+.empty {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ff6f00;
+  padding: 20px;
+}
+
+/* ================== STATUS ================== */
+.status {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.status-pending {
+  background: #fff3cd;
+  color: #ff6f00;
+  border: 1px solid #ffcc80;
+}
+
+/* ================== BUTTONS ================== */
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin: 3px;
+}
+
+.btn.approve {
+  background: #4caf50;
+  color: white;
+  box-shadow: 0px 4px 10px rgba(76, 175, 80, 0.3);
+}
+
+.btn.approve:hover {
+  background: #388e3c;
+  transform: scale(1.05);
+}
+
+.btn.reject {
+  background: #ff5722;
+  color: white;
+  box-shadow: 0px 4px 10px rgba(255, 87, 34, 0.3);
+}
+
+.btn.reject:hover {
+  background: #e64a19;
+  transform: scale(1.05);
+}
+
+/* ================== RESPONSIVE ================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .table-card {
+    max-height: 400px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .admin-body {
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .content {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .table-card {
+    max-height: 350px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .topbar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .logout-btn {
+    width: 100%;
+  }
+
+  .table-card {
+    max-height: 320px;
+  }
+}
