@@ -60,7 +60,13 @@ ng serve
 ---
 
 ## 📸 Screenshots
-(Add screenshots of your UI here)
+<img width="1875" height="811" alt="Screenshot 2026-02-04 124727" src="https://github.com/user-attachments/assets/6a06ae56-8c87-43c5-8cb0-1ce3850d5555" />
+<img width="1892" height="833" alt="Screenshot 2026-02-05 103011" src="https://github.com/user-attachments/assets/e7b31663-ede9-4709-9914-0fb5cdd97b3c" />
+<img width="1813" height="814" alt="Screenshot 2026-02-04 131625" src="https://github.com/user-attachments/assets/e925f868-16ec-4198-a122-9e5e2430de64" />
+<img width="1876" height="825" alt="Screenshot 2026-02-04 125301" src="https://github.com/user-attachments/assets/9c3db83a-d747-42fc-8b6a-cb8342e164b2" />
+
+
+
 
 ---
 
